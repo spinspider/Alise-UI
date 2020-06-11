@@ -1,0 +1,127 @@
+<div id="image">
+<div id="left">
+   <br/><br/>
+  <h1>Welcome To</h1>
+  <h1 style="color:red;">KNCET</h1>
+  <h1>Alumni page</h1>
+
+</div>
+<div id="right"> 
+   <form [formGroup]="form" (ngSubmit)="submit()">
+        <div id="element1">
+          <h3>First Name:</h3>
+          <input type = "text" 
+                  class ="form-control col-md-10" 
+                  placeholder = "First name" 
+                  formControlName="first_name" 
+                  required
+              [(ngModel)]="user_details.first_name"
+              name="first_name">
+         </div>
+         <div id="element2">
+            <h3>Last Name:</h3>
+            <input type = "text" 
+                  class ="form-control col-md-10" 
+                  placeholder = "Last name" 
+                  formControlName="last_name" 
+                  required
+              [(ngModel)]="user_details.last_name"
+              name="last_name">  
+          
+        </div>
+        <br/>
+   	    <div>
+   	    	<h3>Email:</h3>
+   	    	<input type = "email" 
+   	    	        class ="form-control col-md-10" 
+   	    	        placeholder = "email" 
+   	    	        formControlName="email" 
+   	    	        required
+        			[(ngModel)]="user_details.email"
+        			name="email">
+   	    	  <br/>
+   	    	
+   	    </div>
+   	    <div>
+   	    	<h3>Phone Number:</h3>
+   	    	<input type = "text" 
+   	    	        class ="form-control col-md-10" 
+   	    	        placeholder = "phone number" 
+   	    	        ng-pattern="/^[0-9]{1,7}$/"
+   	    	        formControlName="phone_number" 
+   	    	        required
+        			[(ngModel)]="user_details.phone_number"
+        			name="phone_number">
+   	    	  <br/>
+   	    	
+   	    </div>
+   	    <div>
+   	    	<h3>Password:</h3>
+   	    	<input type = "password" 
+   	    	        class ="form-control col-md-10" 
+   	    	        placeholder = "Password" 
+   	    	        formControlName="password" 
+   	    	        required
+        			[(ngModel)]="user_details.password"
+        			name="password">
+   	    	  <br/>
+   	    	
+   	    </div>
+        <h3>Student Status:</h3>
+        <div id="element1">
+          <input id="pass" type="radio" value="male" name="info" (change)="status_value(1)"formControlName="info">
+          <label style="float:center;" for="pass">Passout Student</label>
+        </div> 
+        <div id="element2">
+          <input id="stu" class="pull-right" type="radio" value="check" name="info" (change)="status_value(0)" formControlName="info">
+          <label for="check"> Student</label>
+      </div>
+      <br/>
+       <div >
+        <!--  <label for="location">Select Location:</label> -->
+            <h3>Select Batch:</h3>
+            <select formControlName="batch" class="form-control col-md-10" [(ngModel)]="user_details.batch" (change)="st()">
+
+                <option *ngFor="let webs of BatchList" [ngValue]="webs">{{webs}}</option>
+
+            </select>
+        <br/>    
+      </div>
+
+        <div >
+<!-- 	            <label for="domain">Select Domain:</label> -->
+           	<h3>Select Department:</h3>
+            <select formControlName="department" class="form-control col-md-10" [(ngModel)]="user_details.department" (change)="selected()">
+
+                <option *ngFor="let web of DepartmentList" [ngValue]="web">{{web}}</option>
+
+            </select>
+           <br/> 
+        </div>
+    
+	    <div *ngIf="!status">
+        <!--  <label for="location">Select Location:</label> -->
+            <h3>Select Your Domain:</h3>
+            <select formControlName="batch" class="form-control col-md-10" [(ngModel)]="user_details.domain" (change)="st()">
+
+                <option *ngFor="let webs of DomainList" [ngValue]="webs">{{webs}}</option>
+
+            </select>
+           <br/> 
+	    </div>
+
+	    <div *ngIf="!status">
+        <!--  <label for="location">Select Location:</label> -->
+            <h3>Select Your Location:</h3>
+            <select formControlName="location" class="form-control col-md-10" [(ngModel)]="user_details.location" (change)="st()">
+
+                <option *ngFor="let webs of LocationList" [ngValue]="webs">{{webs}}</option>
+
+            </select>
+        <br/>    
+	    </div>
+	    </form>
+	     <button class="btn btn-primary" type="submit" (click)="submit()">Submit</button>
+	
+</div>
+</div>

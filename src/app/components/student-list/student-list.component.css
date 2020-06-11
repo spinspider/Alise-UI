@@ -1,0 +1,26 @@
+#content {
+  width: 100%;
+  vertical-align: top;
+}
+#filter {
+  *display: inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+#list {
+  *display: inline-block;
+  width: 100%;
+  background-color: green;
+  vertical-align: top;
+}
+#left, #right {
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+}
+#leftnew{
+    display: inline-block;
+    width: 45%;
+    height: 100%;
+    float:left;
+}

@@ -1,0 +1,48 @@
+<div id="image">
+<div id="left">
+  <br/><br/>
+  <h1>Welcome To</h1>
+  <h1 style="color:blue;">KNCET</h1>
+  <h1>Alumni page</h1>
+
+</div>
+<div id="right"> 
+  <br/>
+  <div >
+      <div class="submit-form">
+          <div>
+            <div class="form-group">
+              <label for="email">Email Id </label>
+              <input
+                type="text"
+                class="form-control"
+                id="email"
+                required
+                [(ngModel)]="login_data.email"
+                name="email"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="description">Password</label>
+              <input
+                class="form-control"
+                id="password"
+                required
+                [(ngModel)]="login_data.password"
+                name="password"
+              />
+            </div>
+            <div align="center">
+              <button (click)="submit()" class="btn btn-success">Submit</button>
+            </div>
+          </div>
+      </div>
+      <br />
+      <div align="center">
+        <a href="http://localhost:8081/register">Sign up</a>
+
+      </div>
+  </div>    
+</div>
+</div>
